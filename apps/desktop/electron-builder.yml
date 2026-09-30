@@ -1,0 +1,31 @@
+appId: com.onblanksystems.obdavi
+productName: OB-DaVi
+asar: true
+directories:
+  output: dist-installers
+  buildResources: build
+files:
+  - out/**
+  - package.json
+fileAssociations:
+  - ext: obdavi
+    name: OB-DaVi Project
+    description: OB-DaVi portable data visualization project
+    mimeType: application/x-obdavi
+    role: Editor
+win:
+  target:
+    - nsis
+  icon: build/icon.png
+mac:
+  target:
+    - dmg
+  category: public.app-category.productivity
+  icon: build/icon.png
+linux:
+  target:
+    - AppImage
+    - deb
+  category: Office
+  icon: build/icon.png
+publish: null

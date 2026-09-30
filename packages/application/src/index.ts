@@ -1,0 +1,6 @@
+export const applicationUseCases = [
+  'CreateProject', 'OpenProject', 'ImportSource', 'RefreshSource', 'RelinkSource',
+  'UpdateTransformationPipeline', 'CreateRelationship', 'CreateCalculatedField', 'CreateMeasure',
+  'CreatePivot', 'CreateVisualization', 'CreateDashboard', 'ApplyDashboardFilter', 'HandleCrossFilter',
+  'ExportDashboard', 'ExportVisual', 'ExportTable'
+] as const;

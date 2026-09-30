@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="120" viewBox="0 0 480 120">
+  <rect width="480" height="120" rx="24" fill="#182332"/>
+  <circle cx="58" cy="60" r="31" fill="#5C6BFF"/>
+  <path d="M40 72V50h10v13l10-20h12L60 62l15 10H59L50 65v7z" fill="#B8FFD8"/>
+  <text x="105" y="75" font-family="Arial, sans-serif" font-size="49" font-weight="700" fill="#F7F8FC">OB-DaVi</text>
+</svg>

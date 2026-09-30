@@ -1,0 +1,1 @@
+export const OBDAVI_PROJECT_FORMAT_VERSION = 1;

@@ -1,0 +1,38 @@
+{
+  "name": "ob-davi",
+  "version": "0.1.0",
+  "private": true,
+  "description": "OB-DaVi — local-first open-source Data Visualizer by onBlank.",
+  "license": "Apache-2.0",
+  "packageManager": "pnpm@12.6.0",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "dev": "turbo run dev --filter=@obdavi/desktop",
+    "build": "turbo run build",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "lint": "turbo run lint",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "pnpm lint && pnpm typecheck && pnpm test && pnpm build"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.3",
+    "eslint": "10.10.0",
+    "prettier": "3.9.9",
+    "turbo": "2.11.2",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.71.0",
+    "vitest": "5.0.2"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@duckdb/node-bindings",
+      "better-sqlite3",
+      "electron",
+      "esbuild"
+    ]
+  }
+}

@@ -1,0 +1,278 @@
+ob-davi/
+├── .github/
+│   ├── workflows/
+│   │   ├── ci.yml
+│   │   ├── codeql.yml
+│   │   ├── release-please.yml
+│   │   └── release.yml
+│   ├── dependabot.yml
+│   └── release-please-config.json
+├── apps/
+│   └── desktop/
+│       ├── build/
+│       │   └── icon.png
+│       ├── src/
+│       │   ├── main/
+│       │   │   ├── connections/
+│       │   │   │   └── .gitkeep
+│       │   │   ├── exports/
+│       │   │   │   └── .gitkeep
+│       │   │   ├── ipc/
+│       │   │   │   └── .gitkeep
+│       │   │   ├── jobs/
+│       │   │   │   └── .gitkeep
+│       │   │   ├── projects/
+│       │   │   │   └── .gitkeep
+│       │   │   ├── security/
+│       │   │   │   └── .gitkeep
+│       │   │   └── index.ts
+│       │   ├── preload/
+│       │   │   └── index.ts
+│       │   └── renderer/
+│       │       ├── assets/
+│       │       │   └── brand/
+│       │       │       ├── ob-davi-logo.svg
+│       │       │       ├── onblank-logo.svg
+│       │       │       ├── powered-by-onblank.svg
+│       │       │       └── README.md
+│       │       ├── src/
+│       │       │   ├── components/
+│       │       │   │   └── .gitkeep
+│       │       │   ├── features/
+│       │       │   │   ├── dashboards/
+│       │       │   │   │   └── .gitkeep
+│       │       │   │   ├── data/
+│       │       │   │   │   └── .gitkeep
+│       │       │   │   ├── export/
+│       │       │   │   │   └── .gitkeep
+│       │       │   │   ├── home/
+│       │       │   │   │   └── .gitkeep
+│       │       │   │   ├── model/
+│       │       │   │   │   └── .gitkeep
+│       │       │   │   ├── pivots/
+│       │       │   │   │   └── .gitkeep
+│       │       │   │   ├── prepare/
+│       │       │   │   │   └── .gitkeep
+│       │       │   │   ├── settings/
+│       │       │   │   │   └── .gitkeep
+│       │       │   │   └── visuals/
+│       │       │   │       └── .gitkeep
+│       │       │   ├── hooks/
+│       │       │   │   └── .gitkeep
+│       │       │   ├── state/
+│       │       │   │   └── .gitkeep
+│       │       │   ├── ui/
+│       │       │   │   └── App.tsx
+│       │       │   ├── global.d.ts
+│       │       │   ├── main.tsx
+│       │       │   └── styles.css
+│       │       └── index.html
+│       ├── AGENTS.md
+│       ├── electron-builder.yml
+│       ├── electron.vite.config.ts
+│       ├── package.json
+│       └── tsconfig.json
+├── docs/
+│   ├── ARCHITECTURE.md
+│   ├── DATA_MODEL.md
+│   ├── DATA_PREPARATION.md
+│   ├── EXPORTS.md
+│   ├── FORMULA_LANGUAGE.md
+│   ├── NETWORK_AND_PRIVACY.md
+│   ├── PDF_EXTRACTION.md
+│   ├── PROJECT_FORMAT.md
+│   ├── SOURCE_ADAPTERS.md
+│   ├── V1_SCOPE.md
+│   └── VISUALIZATIONS.md
+├── infra/
+│   └── packaging/
+│       ├── AGENTS.md
+│       └── README.md
+├── packages/
+│   ├── analytics-duckdb/
+│   │   ├── src/
+│   │   │   ├── worker/
+│   │   │   │   └── .gitkeep
+│   │   │   └── index.ts
+│   │   ├── AGENTS.md
+│   │   ├── package.json
+│   │   ├── README.md
+│   │   └── tsconfig.json
+│   ├── application/
+│   │   ├── src/
+│   │   │   └── index.ts
+│   │   ├── AGENTS.md
+│   │   ├── package.json
+│   │   ├── README.md
+│   │   └── tsconfig.json
+│   ├── contracts/
+│   │   ├── src/
+│   │   │   ├── analytics.ts
+│   │   │   ├── index.ts
+│   │   │   ├── jobs.ts
+│   │   │   ├── project-store.ts
+│   │   │   └── source-adapter.ts
+│   │   ├── AGENTS.md
+│   │   ├── package.json
+│   │   ├── README.md
+│   │   └── tsconfig.json
+│   ├── db-sqlite/
+│   │   ├── migrations/
+│   │   │   ├── 001_initials.sql
+│   │   │   ├── 002_functions.sql
+│   │   │   ├── 003_app_settings.sql
+│   │   │   ├── 004_recent_projects.sql
+│   │   │   └── 005_connections_relinks.sql
+│   │   ├── src/
+│   │   │   ├── migrations/
+│   │   │   │   └── .gitkeep
+│   │   │   └── index.ts
+│   │   ├── AGENTS.md
+│   │   ├── package.json
+│   │   ├── README.md
+│   │   └── tsconfig.json
+│   ├── domain/
+│   │   ├── src/
+│   │   │   ├── dashboards.ts
+│   │   │   ├── datasets.ts
+│   │   │   ├── formulas.ts
+│   │   │   ├── index.ts
+│   │   │   ├── relationships.ts
+│   │   │   ├── sources.ts
+│   │   │   ├── transformations.ts
+│   │   │   └── visualizations.ts
+│   │   ├── AGENTS.md
+│   │   ├── package.json
+│   │   ├── README.md
+│   │   └── tsconfig.json
+│   ├── exporters/
+│   │   ├── src/
+│   │   │   ├── image/
+│   │   │   │   └── .gitkeep
+│   │   │   ├── pdf/
+│   │   │   │   └── .gitkeep
+│   │   │   ├── tabular/
+│   │   │   │   └── .gitkeep
+│   │   │   └── index.ts
+│   │   ├── AGENTS.md
+│   │   ├── package.json
+│   │   ├── README.md
+│   │   └── tsconfig.json
+│   ├── importers/
+│   │   ├── src/
+│   │   │   ├── arrow/
+│   │   │   │   └── README.md
+│   │   │   ├── delimited/
+│   │   │   │   └── README.md
+│   │   │   ├── duckdb/
+│   │   │   │   └── README.md
+│   │   │   ├── excel/
+│   │   │   │   └── README.md
+│   │   │   ├── json/
+│   │   │   │   └── README.md
+│   │   │   ├── mysql/
+│   │   │   │   └── README.md
+│   │   │   ├── parquet/
+│   │   │   │   └── README.md
+│   │   │   ├── pdf/
+│   │   │   │   ├── confidence.ts
+│   │   │   │   └── README.md
+│   │   │   ├── postgresql/
+│   │   │   │   └── README.md
+│   │   │   ├── sqlite/
+│   │   │   │   └── README.md
+│   │   │   ├── sqlserver/
+│   │   │   │   └── README.md
+│   │   │   ├── index.ts
+│   │   │   └── registry.ts
+│   │   ├── AGENTS.md
+│   │   ├── package.json
+│   │   ├── README.md
+│   │   └── tsconfig.json
+│   ├── project-duckdb/
+│   │   ├── migrations/
+│   │   │   ├── 001_initials.sql
+│   │   │   ├── 002_functions.sql
+│   │   │   ├── 003_project.sql
+│   │   │   ├── 004_sources.sql
+│   │   │   ├── 005_datasets.sql
+│   │   │   ├── 006_relationships.sql
+│   │   │   ├── 007_transformations.sql
+│   │   │   ├── 008_formulas.sql
+│   │   │   ├── 009_pivots_visualizations.sql
+│   │   │   ├── 010_dashboards.sql
+│   │   │   └── 011_filters_settings.sql
+│   │   ├── src/
+│   │   │   ├── migrations/
+│   │   │   │   └── .gitkeep
+│   │   │   └── index.ts
+│   │   ├── AGENTS.md
+│   │   ├── package.json
+│   │   ├── README.md
+│   │   └── tsconfig.json
+│   ├── query-engine/
+│   │   ├── src/
+│   │   │   ├── formula-ast.ts
+│   │   │   ├── formula-compiler.ts
+│   │   │   ├── index.ts
+│   │   │   └── pivot.ts
+│   │   ├── AGENTS.md
+│   │   ├── package.json
+│   │   ├── README.md
+│   │   └── tsconfig.json
+│   ├── settings/
+│   │   ├── src/
+│   │   │   └── index.ts
+│   │   ├── AGENTS.md
+│   │   ├── package.json
+│   │   ├── README.md
+│   │   └── tsconfig.json
+│   ├── shared/
+│   │   ├── src/
+│   │   │   └── index.ts
+│   │   ├── AGENTS.md
+│   │   ├── package.json
+│   │   ├── README.md
+│   │   └── tsconfig.json
+│   ├── test-utils/
+│   │   ├── src/
+│   │   │   └── index.ts
+│   │   ├── AGENTS.md
+│   │   ├── package.json
+│   │   ├── README.md
+│   │   └── tsconfig.json
+│   ├── ui/
+│   │   ├── src/
+│   │   │   └── index.ts
+│   │   ├── AGENTS.md
+│   │   ├── package.json
+│   │   ├── README.md
+│   │   └── tsconfig.json
+│   └── visualization-engine/
+│       ├── src/
+│       │   └── index.ts
+│       ├── AGENTS.md
+│       ├── package.json
+│       ├── README.md
+│       └── tsconfig.json
+├── .editorconfig
+├── .gitignore
+├── .nvmrc
+├── .prettierignore
+├── .prettierrc.json
+├── .release-please-manifest.json
+├── AGENTS.md
+├── CHANGELOG.md
+├── CONTRIBUTING.md
+├── eslint.config.mjs
+├── LICENSE
+├── package.json
+├── pnpm-workspace.yaml
+├── README.md
+├── REPO_TREE.txt
+├── SCAFFOLD_VALIDATION.md
+├── SECURITY.md
+├── TRADEMARK.md
+├── tsconfig.base.json
+├── tsconfig.package.json
+└── turbo.json
