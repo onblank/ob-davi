@@ -40,7 +40,7 @@ jobs:
           path: release-assets
       - name: Generate checksums
         run: find release-assets -type f -print0 | sort -z | xargs -0 sha256sum > SHA256SUMS
-      - uses: softprops/action-gh-release@v2
+      - uses: softprops/action-gh-release@v3
         with:
           files: |
             release-assets/**/*
