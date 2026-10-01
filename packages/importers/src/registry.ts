@@ -9,5 +9,5 @@ export const V1_SOURCE_ADAPTERS = [
   { id: 'duckdb', extensions: ['duckdb'], network: false },
   { id: 'postgresql', extensions: [], network: true },
   { id: 'mysql', extensions: [], network: true },
-  { id: 'sqlserver', extensions: [], network: true }
+  { id: 'sqlserver', extensions: [], network: true },
 ] as const;

@@ -2,7 +2,19 @@ import { useState } from 'react';
 import obDaviLogo from '../../assets/brand/ob-davi-logo.svg';
 import poweredBy from '../../assets/brand/powered-by-onblank.svg';
 
-const sources = ['Excel', 'CSV / TSV', 'JSON', 'Parquet', 'Arrow', 'PDF', 'SQLite', 'DuckDB', 'PostgreSQL', 'MySQL', 'SQL Server'];
+const sources = [
+  'Excel',
+  'CSV / TSV',
+  'JSON',
+  'Parquet',
+  'Arrow',
+  'PDF',
+  'SQLite',
+  'DuckDB',
+  'PostgreSQL',
+  'MySQL',
+  'SQL Server',
+];
 
 export function App() {
   const [projectPath, setProjectPath] = useState<string | null>(null);
@@ -20,13 +32,29 @@ export function App() {
   return (
     <div className="app-shell">
       <aside className="sidebar">
-        <div className="brand-box"><img src={obDaviLogo} alt="OB-DaVi" /></div>
+        <div className="brand-box">
+          <img src={obDaviLogo} alt="OB-DaVi" />
+        </div>
         <nav>
-          {['Home', 'Data', 'Model', 'Prepare', 'Pivots', 'Visuals', 'Dashboards', 'Export', 'Settings'].map((item, i) => (
-            <button className={i === 0 ? 'nav-item active' : 'nav-item'} key={item}>{item}</button>
+          {[
+            'Home',
+            'Data',
+            'Model',
+            'Prepare',
+            'Pivots',
+            'Visuals',
+            'Dashboards',
+            'Export',
+            'Settings',
+          ].map((item, i) => (
+            <button className={i === 0 ? 'nav-item active' : 'nav-item'} key={item}>
+              {item}
+            </button>
           ))}
         </nav>
-        <div className="powered"><img src={poweredBy} alt="Powered by onBlank" /></div>
+        <div className="powered">
+          <img src={poweredBy} alt="Powered by onBlank" />
+        </div>
       </aside>
 
       <main>
@@ -42,18 +70,30 @@ export function App() {
           <section className="welcome-grid">
             <article className="hero-card">
               <h2>Build dashboards from your own data.</h2>
-              <p>Import files or connect to a database, snapshot the data into a portable .obdavi project, prepare it, relate it and visualize it.</p>
+              <p>
+                Import files or connect to a database, snapshot the data into a portable .obdavi
+                project, prepare it, relate it and visualize it.
+              </p>
               <div className="actions">
-                <button className="primary" onClick={createProject}>Create project</button>
-                <button className="secondary" onClick={openProject}>Open .obdavi</button>
+                <button className="primary" onClick={createProject}>
+                  Create project
+                </button>
+                <button className="secondary" onClick={openProject}>
+                  Open .obdavi
+                </button>
               </div>
             </article>
             <article className="source-card">
               <h3>v1 data sources</h3>
               <div className="source-grid">
-                {sources.map((source) => <span key={source}>{source}</span>)}
+                {sources.map((source) => (
+                  <span key={source}>{source}</span>
+                ))}
               </div>
-              <p className="hint">Database connections are explicit import/refresh sources. Current snapshots stay usable offline.</p>
+              <p className="hint">
+                Database connections are explicit import/refresh sources. Current snapshots stay
+                usable offline.
+              </p>
             </article>
           </section>
         ) : (

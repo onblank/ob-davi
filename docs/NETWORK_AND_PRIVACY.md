@@ -5,6 +5,7 @@ OB-DaVi is local-first and zero-cloud-dependency.
 ## Allowed network activity
 
 Only explicit database source connections initiated by the user:
+
 - PostgreSQL;
 - MySQL/MariaDB;
 - SQL Server.

@@ -3,6 +3,7 @@
 `electron-builder` is configured from `apps/desktop/electron-builder.yml`.
 
 Targets:
+
 - Windows: NSIS `.exe`
 - macOS: `.dmg`
 - Linux: `.AppImage` and `.deb`
