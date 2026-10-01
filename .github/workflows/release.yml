@@ -49,7 +49,7 @@ jobs:
       - name: Build installer
         run: pnpm --filter @obdavi/desktop dist
       - name: Upload workflow artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: native-${{ runner.os }}
           path: apps/desktop/dist-installers/*
@@ -60,7 +60,7 @@ jobs:
     if: needs.release-please.outputs.release_created == 'true'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8
         with:
           path: artifacts
       - name: Create checksums
