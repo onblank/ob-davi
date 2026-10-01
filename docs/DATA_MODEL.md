@@ -237,6 +237,7 @@ Portable presentation/model defaults only, for example report locale/time zone a
 ## Local SQLite model
 
 Machine-only tables:
+
 - `schema_migrations`;
 - `app_settings`;
 - `recent_projects`;

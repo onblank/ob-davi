@@ -25,5 +25,9 @@ export interface SourceAdapter<TLocator = unknown> {
   readonly capabilities: AdapterCapabilities;
   probe(locator: TLocator, signal?: AbortSignal): Promise<void>;
   discoverObjects(locator: TLocator, signal?: AbortSignal): Promise<SourceObjectDescriptor[]>;
-  previewObject(locator: TLocator, object: SourceObjectDescriptor, signal?: AbortSignal): Promise<PreviewTable>;
+  previewObject(
+    locator: TLocator,
+    object: SourceObjectDescriptor,
+    signal?: AbortSignal,
+  ): Promise<PreviewTable>;
 }

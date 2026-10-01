@@ -16,23 +16,17 @@
     "lint": "turbo run lint",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "check": "pnpm lint && pnpm typecheck && pnpm test && pnpm build"
+    "check": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm test && pnpm build",
+    "prepare": "husky"
   },
   "devDependencies": {
     "@types/node": "26.6.3",
     "eslint": "10.10.0",
+    "husky": "9.1.7",
     "prettier": "3.9.9",
     "turbo": "2.11.2",
     "typescript": "6.0.3",
     "typescript-eslint": "8.71.0",
     "vitest": "5.0.2"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@duckdb/node-bindings",
-      "better-sqlite3",
-      "electron",
-      "esbuild"
-    ]
   }
 }

@@ -5,6 +5,7 @@ Also read `../../AGENTS.md` and `../../../AGENTS.md`; both remain applicable to 
 Owns Electron main/preload/renderer and OS integration.
 
 Rules:
+
 - renderer never gets Node, raw fs, raw DuckDB/SQLite or credentials;
 - main process composes use cases, it does not own analytics/domain rules;
 - heavy jobs go to worker processes/threads;

@@ -11,7 +11,8 @@ export type SourceAdapterKind =
   | 'mysql'
   | 'sqlserver';
 
-export type SourceObjectKind = 'sheet' | 'table' | 'view' | 'json_table' | 'pdf_table' | 'file_table';
+export type SourceObjectKind =
+  'sheet' | 'table' | 'view' | 'json_table' | 'pdf_table' | 'file_table';
 
 export interface SourceIdentity {
   id: string;

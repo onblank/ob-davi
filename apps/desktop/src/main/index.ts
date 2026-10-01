@@ -35,7 +35,7 @@ app.whenReady().then(() => {
       properties: ['openFile'],
       filters: [{ name: 'OB-DaVi Project', extensions: ['obdavi'] }],
     });
-    return result.canceled ? null : result.filePaths[0] ?? null;
+    return result.canceled ? null : (result.filePaths[0] ?? null);
   });
   ipcMain.handle('project:choose-create', async () => {
     const result = await dialog.showSaveDialog({
@@ -43,7 +43,7 @@ app.whenReady().then(() => {
       defaultPath: 'analysis.obdavi',
       filters: [{ name: 'OB-DaVi Project', extensions: ['obdavi'] }],
     });
-    return result.canceled ? null : result.filePath ?? null;
+    return result.canceled ? null : (result.filePath ?? null);
   });
 
   createMainWindow();

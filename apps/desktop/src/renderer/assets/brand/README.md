@@ -3,6 +3,7 @@
 These are placeholders only.
 
 Replace the files while keeping the same filenames:
+
 - `ob-davi-logo.svg`
 - `onblank-logo.svg`
 - `powered-by-onblank.svg`
