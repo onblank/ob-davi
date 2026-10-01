@@ -5,6 +5,7 @@ OB-DaVi supports text-based PDFs only. OCR is out of scope for v1.
 ## Extraction
 
 Using PDF.js:
+
 1. extract text items and coordinates per page;
 2. group text into row candidates using vertical tolerance derived from item/font geometry;
 3. detect recurring horizontal column bands;
@@ -16,6 +17,7 @@ Using PDF.js:
 ## Confidence
 
 Recommended weighted score:
+
 - column alignment consistency: 0.35;
 - row width/column-count consistency: 0.25;
 - cell occupancy/density: 0.15;
@@ -23,6 +25,7 @@ Recommended weighted score:
 - numeric/text type consistency by column: 0.10.
 
 Threshold policy:
+
 - `>= 0.85`: high; preview and normal import allowed;
 - `>= 0.65 && < 0.85`: medium; explicit inspection/confirmation required;
 - `< 0.65`: low; import blocked.

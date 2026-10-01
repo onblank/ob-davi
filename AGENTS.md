@@ -1,5 +1,12 @@
 # AGENTS.md — OB-DaVi
 
+## Branch policy
+
+Create ordinary work from current `dev` on a short-lived `feature/*`, `fix/*`, `refactor/*`,
+`docs/*` or `chore/*` branch. Merge it into protected `dev` through a reviewed PR with required CI;
+promote `dev` into protected `main` through a separate reviewed PR. Never work directly on either
+protected branch. Follow `../docs/git-workflow.md`.
+
 This repository belongs to the onBlank Group workspace.
 
 Before making cross-product, AI, finance, billing, support, privacy, security, integration or shared
@@ -27,6 +34,7 @@ OB-DaVi and OB-Tracker are separate products. Never create a dependency on OB-Tr
 OB-DaVi has **zero cloud dependency**.
 
 It must never require:
+
 - an OB-DaVi/onBlank account;
 - authentication to onBlank;
 - telemetry or product analytics;
@@ -43,6 +51,7 @@ It must never require:
 The user may explicitly configure PostgreSQL, MySQL/MariaDB or SQL Server running on localhost, LAN or a remote host.
 
 Rules:
+
 - connection is initiated by the user;
 - connector is read-only from OB-DaVi's perspective;
 - imported data is snapshotted into the `.obdavi` project;
@@ -56,6 +65,7 @@ Rules:
 A `.obdavi` file is a portable DuckDB database owned by OB-DaVi.
 
 It contains:
+
 - imported raw snapshots;
 - prepared dataset definitions/views;
 - portable source metadata without credentials/absolute local locators;
@@ -75,6 +85,7 @@ Local machine metadata belongs in the application SQLite DB, not in `.obdavi`.
 ## Source adapters required for v1
 
 File adapters:
+
 - Excel: XLSX/XLS/XLSM/XLSB/ODS, data only, never execute macros;
 - CSV/TSV;
 - JSON/JSONL/NDJSON;
@@ -85,6 +96,7 @@ File adapters:
 - DuckDB file.
 
 Database adapters:
+
 - PostgreSQL;
 - MySQL/MariaDB;
 - Microsoft SQL Server.
@@ -106,6 +118,7 @@ v1 supports genuine text PDFs only. No OCR.
 Never import a low-confidence table candidate.
 
 Confidence policy:
+
 - high: importable after preview;
 - medium: explicit user inspection/confirmation required;
 - low: blocked with a clear explanation;
@@ -118,6 +131,7 @@ Never optimize for “we extracted something” over correctness.
 Fields use stable UUIDs. Visuals, formulas and relationships reference field IDs, never display names.
 
 During refresh:
+
 - stage new snapshot;
 - infer new schema;
 - compare source field identity;
@@ -135,6 +149,7 @@ Raw snapshot data is immutable from the user's perspective.
 Transformations are ordered, non-destructive steps producing prepared datasets/views.
 
 v1 must support at least:
+
 - rename/reorder/remove columns;
 - type changes;
 - filtering/sorting/distinct/deduplication;
@@ -161,6 +176,7 @@ Calculated columns and measures are different concepts.
 Formulas are parsed into an OB-DaVi AST, validated, then compiled to DuckDB SQL.
 
 Forbidden:
+
 - JavaScript `eval`;
 - arbitrary JavaScript;
 - executable user plugins in formula text;
@@ -170,6 +186,7 @@ Forbidden:
 ## Relationships
 
 v1 supports:
+
 - 1:1;
 - 1:N;
 - N:1;
@@ -182,6 +199,7 @@ Reject or require resolution for ambiguous active relationship paths that make f
 ## Filtering
 
 Keep these concepts distinct:
+
 - preparation filter: changes prepared dataset;
 - visual filter: affects one visualization;
 - dashboard filter/slicer: affects compatible dashboard visuals;
@@ -194,6 +212,7 @@ Cross-filtering is required in v1.
 Pivot definitions are first-class persisted objects.
 
 They support:
+
 - rows;
 - columns;
 - values/measures;
@@ -218,6 +237,7 @@ ECharts option
 ```
 
 v1 visualization kinds include:
+
 - table;
 - pivot table;
 - KPI/card;
@@ -248,6 +268,7 @@ Widget kinds include at least visualization, slicer, text and KPI/visual referen
 ## Export
 
 v1 supports:
+
 - dashboard → PDF, PNG;
 - individual visual → PNG, SVG where supported;
 - table/pivot → CSV, XLSX.
@@ -259,6 +280,7 @@ Exports are snapshots for presentation/sharing and do not require OB-DaVi to vie
 Renderer must remain responsive.
 
 Heavy operations run outside the renderer:
+
 - imports;
 - profiling;
 - transformations;
@@ -284,6 +306,7 @@ Long jobs support progress, cancellation and structured errors.
 ## Electron security
 
 Required:
+
 - `contextIsolation: true`;
 - `nodeIntegration: false`;
 - sandbox renderer where compatible;
@@ -297,6 +320,7 @@ Required:
 Secrets are local-only and protected through OS-backed encryption where available.
 
 Do not store database passwords:
+
 - in `.obdavi`;
 - in `.env`;
 - in source code;
@@ -321,6 +345,7 @@ Infrastructure adapters
 ```
 
 Packages:
+
 - `@obdavi/domain`
 - `@obdavi/application`
 - `@obdavi/contracts`
@@ -345,6 +370,7 @@ SQL is allowed only in DuckDB/SQLite infrastructure and query compilation layers
 User-facing domain/application/UI code must not contain persistence SQL.
 
 DuckDB project migrations use explicit SQL and follow:
+
 - `001_initials.sql`: schemas/types;
 - `002_functions.sql`: macros/helper SQL functions when supported;
 - subsequent feature migrations: tables, indexes and associated constraints/macros.
@@ -354,6 +380,7 @@ SQLite local migrations use the same numbering convention, adapted to SQLite's c
 ## Testing
 
 Minimum test groups:
+
 - schema inference;
 - source-object discovery;
 - PDF confidence/table detection;
@@ -388,6 +415,7 @@ Real logos can replace placeholder files in `apps/desktop/src/renderer/assets/br
 - SemVer
 
 Before implementing a feature:
+
 1. identify domain objects/rules;
 2. identify use case;
 3. define/update ports;

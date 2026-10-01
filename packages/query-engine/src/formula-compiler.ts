@@ -8,7 +8,8 @@ export function compileExpression(node: SafeExpression, fields: FieldSqlResolver
   switch (node.type) {
     case 'literal':
       if (node.value === null) return 'NULL';
-      if (typeof node.value === 'number') return Number.isFinite(node.value) ? String(node.value) : 'NULL';
+      if (typeof node.value === 'number')
+        return Number.isFinite(node.value) ? String(node.value) : 'NULL';
       if (typeof node.value === 'boolean') return node.value ? 'TRUE' : 'FALSE';
       return `'${node.value.replaceAll("'", "''")}'`;
     case 'field':

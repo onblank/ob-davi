@@ -1,2 +1,4 @@
 export type UUID = string;
-export const unreachable = (value: never): never => { throw new Error(`Unreachable value: ${String(value)}`); };
+export const unreachable = (value: never): never => {
+  throw new Error(`Unreachable value: ${String(value)}`);
+};

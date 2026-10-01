@@ -1,13 +1,5 @@
 export type FieldDataType =
-  | 'string'
-  | 'integer'
-  | 'decimal'
-  | 'boolean'
-  | 'date'
-  | 'time'
-  | 'datetime'
-  | 'duration'
-  | 'json';
+  'string' | 'integer' | 'decimal' | 'boolean' | 'date' | 'time' | 'datetime' | 'duration' | 'json';
 
 export type SemanticRole = 'dimension' | 'measure';
 

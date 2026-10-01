@@ -25,6 +25,7 @@ Refresh repeats discovery/snapshot into staging and performs schema-drift analys
 ## Common capabilities
 
 Adapters describe:
+
 - adapter kind;
 - accepted source locator type;
 - whether source can expose multiple objects;
@@ -64,6 +65,7 @@ Formats: XLSX, XLS, XLSM, XLSB, ODS.
 Use the pinned SheetJS CE 0.20.3 authoritative tarball distribution, not the stale public npm `xlsx` 0.18.5 package.
 
 Responsibilities:
+
 - enumerate all sheets;
 - detect likely header row;
 - support manual header-row override;
@@ -76,6 +78,7 @@ Responsibilities:
 ## Delimited text adapter
 
 CSV/TSV:
+
 - delimiter detection with explicit override;
 - quote/escape handling;
 - encoding detection/fallback UI;
@@ -88,6 +91,7 @@ CSV/TSV:
 Supports JSON, JSONL and NDJSON.
 
 Candidate discovery:
+
 - root array → one dataset;
 - top-level object containing multiple table-like arrays → multiple candidates;
 - nested objects → flatten/keep JSON options;

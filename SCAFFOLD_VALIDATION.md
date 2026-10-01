@@ -15,7 +15,9 @@ Static generation checks:
 
 ## Dependency/build validation
 
-Dependency versions were selected from current stable package metadata on 2026-09-30. This generation environment did not run `pnpm install`, so no lockfile is fabricated. On the development machine run:
+Dependency versions were selected from current stable package metadata on 2026-09-30. The first
+dependency installation and full repository check completed successfully on that date, and the
+generated `pnpm-lock.yaml` is now the reproducible dependency source for CI. To reproduce locally:
 
 ```bash
 corepack enable
@@ -25,6 +27,6 @@ pnpm check
 pnpm dev
 ```
 
-Commit the generated `pnpm-lock.yaml` after the first successful install/check.
-
-Additional note: DuckDB migration SQL is defined but was not executed in this container because no DuckDB runtime is installed here. Validate it during the first `pnpm check`/project integration pass.
+The check covers linting, TypeScript, tests and production builds across all workspace packages.
+The DuckDB migration SQL is present, but no current test exercises a complete project migration;
+that remains an integration-test gap rather than a dependency/build-validation gap.
