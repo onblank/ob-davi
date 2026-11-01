@@ -25,7 +25,7 @@ jobs:
     steps:
       - id: app-token
         name: Create release automation token
-        uses: actions/create-github-app-token@v2
+        uses: actions/create-github-app-token@v3
         with:
           app-id: ${{ vars.ONBLANK_RELEASE_APP_ID }}
           private-key: ${{ secrets.ONBLANK_RELEASE_APP_PRIVATE_KEY }}
