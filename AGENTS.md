@@ -17,6 +17,11 @@ The global network-integration model does not authorize OB-DaVi to connect to an
 project. The zero-cloud, explicit source access and snapshot portability rules below are stricter
 and remain authoritative.
 
+## Development roadmap
+
+Use [ROADMAP.md](ROADMAP.md) to select the next ready iteration and record closure evidence in
+its implementation PR.
+
 ## Product
 
 **OB-DaVi (Data Visualizer)** is an open-source desktop data preparation, analytics and dashboarding application by onBlank.
