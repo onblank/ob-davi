@@ -68,3 +68,4 @@ pnpm dev
 There is intentionally no required `.env` file.
 
 Before changing the repository, read [`AGENTS.md`](./AGENTS.md) and the nearest scoped `AGENTS.md` file.
+The [development roadmap](ROADMAP.md) tracks phases, iterations and acceptance evidence.
